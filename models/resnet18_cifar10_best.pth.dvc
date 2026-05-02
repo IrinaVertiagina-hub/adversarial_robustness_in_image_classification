@@ -1,0 +1,5 @@
+outs:
+- md5: 83ae9db54e8fa6a6941078e99424c0ad
+  size: 44807563
+  hash: md5
+  path: resnet18_cifar10_best.pth
