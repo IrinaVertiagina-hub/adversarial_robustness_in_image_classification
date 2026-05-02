@@ -1,34 +1,19 @@
-train:
-  cmd: python3 src/models/train_model.py
-  deps:
-  - path: data/processed
-    md5: d751713988987e9331980363e24189ce.dir
-  - path: src/models/train_model.py
-    md5: d41d8cd98f00b204e9800998ecf8427e
-  outs:
-  - path: models
-    md5: d751713988987e9331980363e24189ce.dir
-  - path: reports/training_metrics.txt
-    md5: d41d8cd98f00b204e9800998ecf8427e
-eval:
-  cmd: python3 src/models/predict_model.py
-  deps:
-  - path: data/processed
-    md5: d751713988987e9331980363e24189ce.dir
-  - path: models
-    md5: d751713988987e9331980363e24189ce.dir
-  - path: src/models/predict_model.py
-    md5: d41d8cd98f00b204e9800998ecf8427e
-  outs:
-  - path: reports/metrics.txt
-    md5: d41d8cd98f00b204e9800998ecf8427e
-process_data:
-  cmd: python3 src/data/make_dataset.py
-  deps:
-  - path: data/raw
-    md5: d751713988987e9331980363e24189ce.dir
-  - path: src/data/make_dataset.py
-    md5: d41d8cd98f00b204e9800998ecf8427e
-  outs:
-  - path: data/processed
-    md5: d751713988987e9331980363e24189ce.dir
+schema: '2.0'
+stages:
+  train:
+    cmd: py src/models/train_model.py
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: e252d2c8ba36d1ab3e21a873ab62daa3.dir
+      size: 356712185
+      nfiles: 9
+    - path: src/models/train_model.py
+      hash: md5
+      md5: 77f8676d6d895ee22ecb64497e807eb9
+      size: 3355
+    outs:
+    - path: models/resnet18_cifar10_best.pth
+      hash: md5
+      md5: 83ae9db54e8fa6a6941078e99424c0ad
+      size: 44807563
