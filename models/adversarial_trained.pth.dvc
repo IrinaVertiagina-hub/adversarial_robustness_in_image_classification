@@ -1,0 +1,5 @@
+outs:
+- md5: 05a1354a07be68c8613424c01d9c5f3c
+  size: 44807307
+  hash: md5
+  path: adversarial_trained.pth
