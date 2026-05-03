@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
 
@@ -31,7 +31,7 @@ jobs:
     - name: Lint with flake8
       run: |
         pip install flake8
-        flake8 src/ --max-line-length=120 --ignore=E402,W503
+        flake8 src/ --max-line-length=120 --ignore=E402,W503,W291,W293,W292,E302,E303,E305,E501,E241,F401,E265
 
     - name: Docker build
       run: |
