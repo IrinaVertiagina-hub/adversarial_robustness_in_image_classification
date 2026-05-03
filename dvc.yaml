@@ -1,9 +1,0 @@
-stages:
-  train:
-    cmd: py src/models/train_model.py
-    deps:
-      - data/raw
-      - src/models/train_model.py
-    outs:
-      - models/resnet18_cifar10_best.pth:
-          persist: true
